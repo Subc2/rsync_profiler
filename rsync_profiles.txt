@@ -1,2 +1,2 @@
 # LABEL ; OPTIONS ; BACKUP ; SRC ; DEST
-rpi ; -avub --del --backup-dir ; ../old_scripts ; ~/up-to-date_scripts/ ; pi@raspberrypi:~/some_scripts
+rpi_test ; -aubvh --del ; ../old_scripts ; ~/up-to-date_scripts/ ; pi@raspberrypi:~/some_scripts

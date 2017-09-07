@@ -6,10 +6,10 @@
 from __future__ import print_function
 
 __author__ = "Paweł Zacharek"
-__copyright__ = "Copyright (C) 2015-2016 Paweł Zacharek"
-__date__ = "2016-09-11"
+__copyright__ = "Copyright (C) 2015-2017 Paweł Zacharek"
+__date__ = "2017-09-07"
 __license__ = "GPLv2+"
-__version__ = "0.1.5"
+__version__ = "0.1.6"
 
 import argparse
 import os
@@ -66,7 +66,7 @@ with open(args.file) as file:
 
 test = "--dry-run" if args.test else ""
 time_format = "_%Y-%m-%d_%H%M%S" if args.time else "_%Y-%m-%d" if args.date else ""
-backup_folder = "%s%s" % (backup, time.strftime(time_format))
+backup_args = "--backup-dir %s%s" % (backup, time.strftime(time_format)) if backup.strip() else ""
 
 # execute rsync
-os.system("rsync %s %s %s %s %s" % (test, options, backup_folder, src, dest.rstrip("\n")))
+os.system("rsync %s %s %s %s %s" % (test, options, backup_args, src, dest.rstrip("\n")))
